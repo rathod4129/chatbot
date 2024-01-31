@@ -11,7 +11,7 @@ export default function AIChatButton(){
         <>
         <Button onClick={()=> setChatBoxOpen(true)}>
             {/* <Bot size ={20} className="mr-2" /> */}
-            <Image alt="" src={Root} width={45} height={45} className="mr-2"></Image>
+            <Image src={Root} width={45} height={45} alt="roots image" className="mr-2"></Image>
 
             Lets talk to root chatbot
 

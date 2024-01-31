@@ -15,19 +15,21 @@ export async function  POST(req: Request){
         const embedding = await getEmbedding(
             messagesTruncated.map((message)=> message.content).join("\n")
         )
-        const {userId} = auth();
+        // const {userId} = auth();
+        const userId='user_2b1bygjr9a6yt43XY9DzEJQkRuM'
         const vectorQueryResponse = await notesIndex.query({
             vector: embedding,
             topK: 10,
+            // filter: {userId}
             filter: {userId}
         })
 
         const  relevantNotes = await prisma.note.findMany({
-            where:{
-                id: {
-                    in: vectorQueryResponse.matches.map((match) => match.id)
-                }
-            }
+            // where:{
+            //     id: {
+            //         in: vectorQueryResponse.matches.map((match) => match.id)
+            //     }
+            // }
         })
         console.log("Relevant notes found :",relevantNotes)
         const systemMessage : ChatCompletionMessage ={

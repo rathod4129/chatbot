@@ -7,8 +7,9 @@ import { redirect } from 'next/navigation'
 
 export default function Home() {
 
-  const {userId} = auth()
-  if(userId) redirect('/chatbot')
+  // const {userId} = auth()
+  // if(userId)
+   redirect('/chatbot')
 
   return (
     <main className='flex flex-col h-screen items-center justify-center gap-5'>
@@ -23,7 +24,7 @@ export default function Home() {
       An intelligent note taking app with AI integration ,built with OpenAI,Pinecone,Next.js, Shadcn Ui and Clerk.
     </p>
     <Button size='lg' asChild>
-      <Link href={'/notes'}>Open</Link>
+      <Link href={'/chatbot'}>Open</Link>
     </Button>
     </main>
   )

@@ -24,11 +24,11 @@ export default function Navbar(){
             </span>
             <span>
                 <div className="flex items-center gap-2">
-                    {/* <UserButton afterSignOutUrl="/"
+                    <UserButton afterSignOutUrl="/"
                         appearance={{
                             elements:{avatarBox:{width:"2.5rem",height:"2.5rem"}},
                         }}           
-                    /> */}
+                    />
                      <Button onClick={()=>setShowAddEditNoteDialog(true)}><Plus size ={20} className="mr-2"/>Add Notes</Button> 
                     {/* <AIChatButton /> */}
                 </div>
